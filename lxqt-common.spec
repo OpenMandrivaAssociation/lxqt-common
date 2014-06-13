@@ -1,6 +1,6 @@
 Name: lxqt-common
 Version: 0.7.0
-Release: 2
+Release: 3
 Source0: http://lxqt.org/downloads/lxqt/%{version}/%{name}-%{version}.tar.xz
 Summary: Common files for the LXQt desktop
 URL: http://lxqt.org/
