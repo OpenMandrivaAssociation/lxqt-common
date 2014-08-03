@@ -1,22 +1,35 @@
+%define git 20140803
+
 Name: lxqt-common
-Version: 0.7.0
-Release: 4
+Version: 0.8.0
+%if %git
+Release: 0.%git.1
+Source0: %{name}-%{git}.tar.xz
+%else
+Release: 1
 Source0: http://lxqt.org/downloads/lxqt/%{version}/%{name}-%{version}.tar.xz
+%endif
 Summary: Common files for the LXQt desktop
 URL: http://lxqt.org/
 License: GPL
 Group: Graphical desktop/KDE
 BuildRequires: cmake
-BuildRequires: cmake(lxqt)
-BuildRequires: qt4-devel
+BuildRequires: cmake(lxqt-qt5)
+BuildRequires: qt5-devel
+BuildRequires:	cmake(Qt5LinguistTools)
+BuildRequires:	cmake(Qt5X11Extras)
 BuildArch: noarch
 
 %description
 Common files for the LXQt desktop
 
 %prep
+%if %git
+%setup -qn %{name}-%{git}
+%else
 %setup -q -c %{name}-%{version}
-%cmake
+%endif
+%cmake -DUSE_QT5:BOOL=ON
 
 %build
 %make -C build
@@ -48,13 +61,13 @@ EOF
 
 %files
 %{_datadir}/lxqt/themes
-%{_sysconfdir}/lxqt
-%{_sysconfdir}/pcmanfm-qt
+%{_sysconfdir}/qt5/lxqt
+%{_sysconfdir}/qt5/pcmanfm-qt
 %{_sysconfdir}/xdg/autostart/lxqt*
 %{_bindir}/startlxqt
 %{_datadir}/apps/kdm/sessions/lxqt.desktop
 %{_datadir}/lxqt/graphics
-%{_datadir}/lxqt/openbox
+%{_datadir}/lxqt-qt5/openbox
 %{_datadir}/xsessions/lxqt.desktop
 %{_datadir}/apps/kdm/sessions/02lxqt.desktop
 %{_sysconfdir}/X11/wmsession.d/02LXQt
