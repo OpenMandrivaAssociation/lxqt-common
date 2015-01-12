@@ -6,13 +6,15 @@ Version: 0.8.0
 Release: 0.%git.1
 Source0: %{name}-%{git}.tar.xz
 %else
-Release: 2
+Release: 3
 Source0: http://lxqt.org/downloads/lxqt/%{version}/%{name}-%{version}.tar.xz
 %endif
 Summary: Common files for the LXQt desktop
 URL: http://lxqt.org/
 License: GPL
 Group: Graphical desktop/KDE
+Patch0: lxqt-common-0.8.0-omv-settings.patch
+Patch1: lxqt-common-0.8.0-add-xdg_data_dir.patch
 BuildRequires: cmake
 BuildRequires: cmake(lxqt-qt5)
 BuildRequires: qt5-devel
@@ -21,7 +23,7 @@ BuildRequires: cmake(Qt5X11Extras)
 BuildArch: noarch
 
 %description
-Common files for the LXQt desktop
+Common files for the LXQt desktop.
 
 %prep
 %if %git
@@ -29,6 +31,7 @@ Common files for the LXQt desktop
 %else
 %setup -q
 %endif
+%apply_patches
 %cmake -DUSE_QT5:BOOL=ON
 
 %build

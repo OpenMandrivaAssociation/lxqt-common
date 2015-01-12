@@ -1,0 +1,41 @@
+diff -Naur lxqt-common-0.8.0/config/pcmanfm-qt/lxqt/settings.conf.in lxqt-common-0.8.0.tpg/config/pcmanfm-qt/lxqt/settings.conf.in
+--- lxqt-common-0.8.0/config/pcmanfm-qt/lxqt/settings.conf.in	2014-08-23 09:12:54.000000000 +0000
++++ lxqt-common-0.8.0.tpg/config/pcmanfm-qt/lxqt/settings.conf.in	2015-01-12 23:00:50.323327705 +0000
+@@ -4,7 +4,7 @@
+ TerminalCommand=
+ Archiver=file-roller
+ SIUnit=false
+-TerminalDirCommand=xterm
++TerminalDirCommand=qterminal
+ TerminalExecCommand=xterm -e %s
+ 
+ [Behavior]
+@@ -15,7 +15,7 @@
+ 
+ [Desktop]
+ WallpaperMode=stretch
+-Wallpaper=@LXQT_SHARE_DIR@/themes/light/simple_blue_widescreen.png
++Wallpaper=/usr/share/wallpapers/mdk/default.png
+ BgColor=#000000
+ FgColor=#ffffff
+ ShadowColor=#000000
+diff -Naur lxqt-common-0.8.0/config/session.conf lxqt-common-0.8.0.tpg/config/session.conf
+--- lxqt-common-0.8.0/config/session.conf	2014-08-23 09:12:54.000000000 +0000
++++ lxqt-common-0.8.0.tpg/config/session.conf	2015-01-12 22:49:49.425136716 +0000
+@@ -1,12 +1,14 @@
+ [General]
+-window_manager=openbox
++window_manager=/usr/bin/openbox
+ 
+ [Environment]
+ GTK_CSD=0
++BRWOSER=firefox
++TERM=qterminal
+ 
+ [Mouse]
+ cursor_size=18
+-cursor_theme=whiteglass
++cursor_theme=wonderland
+ acc_factor=20
+ acc_threshold=10
+ left_handed=false
