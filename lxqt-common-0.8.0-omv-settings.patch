@@ -29,7 +29,7 @@ diff -Naur lxqt-common-0.8.0/config/session.conf lxqt-common-0.8.0.tpg/config/se
  
  [Environment]
  GTK_CSD=0
-+BRWOSER=firefox
++BRWOSER=qupzilla
 +TERM=qterminal
  
  [Mouse]
