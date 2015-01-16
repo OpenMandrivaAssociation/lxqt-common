@@ -1,0 +1,39 @@
+diff -Naur lxqt-common-0.8.0/startlxqt.in lxqt-common-0.8.0.tpg/startlxqt.in
+--- lxqt-common-0.8.0/startlxqt.in	2014-08-23 09:12:54.000000000 +0000
++++ lxqt-common-0.8.0.tpg/startlxqt.in	2015-01-16 18:00:10.180756215 +0000
+@@ -34,5 +34,35 @@
+ 
+ export XDG_CURRENT_DESKTOP="LXQt"
+ 
++# (tpg) copy default settings because LxQt cannot read them from /etc
++if test "x$XDG_CONFIG_HOME" = "x"
++then
++    BASEDIR="$HOME/.config"
++else
++    BASEDIR="$XDG_CONFIG_HOME"
++fi
++
++if [ ! -d $BASEDIR/lxqt ]; then
++
++    for i in lxqt pcmanfm-qt; do
++	mkdir -p $BASEDIR/$i
++	cp -af /etc/qt5/$i $BASEDIR/$i ;
++    done
++fi
++
++#(tpg) add special icons on DESKTOP
++USER_DESKTOP=`xdg-user-dir DESKTOP`
++if [ ! -e $USER_DESKTOP/om-welcome.desktop ]; then
++    cp -f /usr/share/applications/om-welcome.desktop $USER_DESKTOP 2> /dev/null
++fi
++
++if [ ! -e $USER_DESKTOP/join.desktop ]; then
++    cp -f /usr/share/applications/join.desktop $USER_DESKTOP 2> /dev/null
++fi
++
++if [ ! -e $USER_DESKTOP/donate.desktop ]; then
++    cp -f /usr/share/applications/donate.desktop $USER_DESKTOP 2> /dev/null
++fi
++
+ # Start the LXQt session
+ exec lxqt-session
