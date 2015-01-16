@@ -17,7 +17,7 @@ diff -Naur lxqt-common-0.8.0/startlxqt.in lxqt-common-0.8.0.tpg/startlxqt.in
 +
 +    for i in lxqt pcmanfm-qt; do
 +	mkdir -p $BASEDIR/$i
-+	cp -af /etc/qt5/$i $BASEDIR/$i ;
++	cp -af /etc/qt5/$i $BASEDIR ;
 +    done
 +fi
 +
