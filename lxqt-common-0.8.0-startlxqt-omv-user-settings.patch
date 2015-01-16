@@ -1,7 +1,7 @@
 diff -Naur lxqt-common-0.8.0/startlxqt.in lxqt-common-0.8.0.tpg/startlxqt.in
---- lxqt-common-0.8.0/startlxqt.in	2014-08-23 09:12:54.000000000 +0000
-+++ lxqt-common-0.8.0.tpg/startlxqt.in	2015-01-16 18:00:10.180756215 +0000
-@@ -34,5 +34,35 @@
+--- lxqt-common-0.8.0/startlxqt.in	2015-01-16 23:37:32.000000000 +0000
++++ lxqt-common-0.8.0.tpg/startlxqt.in	2015-01-16 23:38:57.530035524 +0000
+@@ -42,5 +42,38 @@
  
  export XDG_CURRENT_DESKTOP="LXQt"
  
@@ -25,14 +25,17 @@ diff -Naur lxqt-common-0.8.0/startlxqt.in lxqt-common-0.8.0.tpg/startlxqt.in
 +USER_DESKTOP=`xdg-user-dir DESKTOP`
 +if [ ! -e $USER_DESKTOP/om-welcome.desktop ]; then
 +    cp -f /usr/share/applications/om-welcome.desktop $USER_DESKTOP 2> /dev/null
++    chmod +x $USER_DESKTOP/om-welcome.desktop
 +fi
 +
 +if [ ! -e $USER_DESKTOP/join.desktop ]; then
 +    cp -f /usr/share/applications/join.desktop $USER_DESKTOP 2> /dev/null
++    chmod +x $USER_DESKTOP/join.desktop
 +fi
 +
 +if [ ! -e $USER_DESKTOP/donate.desktop ]; then
 +    cp -f /usr/share/applications/donate.desktop $USER_DESKTOP 2> /dev/null
++    chmod +x $USER_DESKTOP/donate.desktop
 +fi
 +
  # Start the LXQt session
