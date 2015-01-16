@@ -22,6 +22,7 @@ BuildRequires: qt5-devel
 BuildRequires: cmake(Qt5LinguistTools)
 BuildRequires: cmake(Qt5X11Extras)
 BuildArch: noarch
+Requires: xdg-user-dirs
 
 %description
 Common files for the LXQt desktop.
