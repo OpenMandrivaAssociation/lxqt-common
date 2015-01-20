@@ -1,6 +1,6 @@
 diff -Naur lxqt-common-0.8.0/config/pcmanfm-qt/lxqt/settings.conf.in lxqt-common-0.8.0.tpg/config/pcmanfm-qt/lxqt/settings.conf.in
 --- lxqt-common-0.8.0/config/pcmanfm-qt/lxqt/settings.conf.in	2014-08-23 09:12:54.000000000 +0000
-+++ lxqt-common-0.8.0.tpg/config/pcmanfm-qt/lxqt/settings.conf.in	2015-01-12 23:00:50.323327705 +0000
++++ lxqt-common-0.8.0.tpg/config/pcmanfm-qt/lxqt/settings.conf.in	2015-01-20 20:39:28.261508017 +0000
 @@ -4,7 +4,7 @@
  TerminalCommand=
  Archiver=file-roller
@@ -21,15 +21,12 @@ diff -Naur lxqt-common-0.8.0/config/pcmanfm-qt/lxqt/settings.conf.in lxqt-common
  ShadowColor=#000000
 diff -Naur lxqt-common-0.8.0/config/session.conf lxqt-common-0.8.0.tpg/config/session.conf
 --- lxqt-common-0.8.0/config/session.conf	2014-08-23 09:12:54.000000000 +0000
-+++ lxqt-common-0.8.0.tpg/config/session.conf	2015-01-12 22:49:49.425136716 +0000
-@@ -1,12 +1,14 @@
- [General]
--window_manager=openbox
-+window_manager=/usr/bin/openbox
++++ lxqt-common-0.8.0.tpg/config/session.conf	2015-01-20 20:41:02.579980816 +0000
+@@ -3,10 +3,12 @@
  
  [Environment]
  GTK_CSD=0
-+BRWOSER=qupzilla
++BROWSER=qupzilla
 +TERM=qterminal
  
  [Mouse]
