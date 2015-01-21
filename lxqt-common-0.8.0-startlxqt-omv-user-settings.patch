@@ -1,6 +1,6 @@
 diff -Naur lxqt-common-0.8.0/startlxqt.in lxqt-common-0.8.0.tpg/startlxqt.in
---- lxqt-common-0.8.0/startlxqt.in	2015-01-18 03:03:55.000000000 +0000
-+++ lxqt-common-0.8.0.tpg/startlxqt.in	2015-01-18 03:15:54.204893548 +0000
+--- lxqt-common-0.8.0/startlxqt.in	2015-01-21 22:55:44.898037482 +0000
++++ lxqt-common-0.8.0.tpg/startlxqt.in	2015-01-21 23:04:26.839475358 +0000
 @@ -1,5 +1,10 @@
  #!/bin/sh
  
@@ -12,7 +12,7 @@ diff -Naur lxqt-common-0.8.0/startlxqt.in lxqt-common-0.8.0.tpg/startlxqt.in
  if [ -z "$XDG_DATA_HOME" ]; then
      export XDG_DATA_HOME="$HOME/.local/share"
  fi
-@@ -42,5 +47,44 @@
+@@ -42,5 +47,51 @@
  
  export XDG_CURRENT_DESKTOP="LXQt"
  
@@ -53,6 +53,13 @@ diff -Naur lxqt-common-0.8.0/startlxqt.in lxqt-common-0.8.0.tpg/startlxqt.in
 +# (tpg) workaround for LxQt not displaying icons for desktop files on LxQt desktop
 +    sed -i -e "s#^Icon=.*#Icon=/usr/share/icons/omv-donate.png#g" $USER_DESKTOP/donate.desktop
 +    chmod +x $USER_DESKTOP/donate.desktop
++fi
++
++# workaround for openbox not being start on first boot
++if cat $BASEDIR/lxqt/session.conf | grep -w window_manager=openbox > /dev/null 2>&1; then
++    if ! pgrep "openbox" > /dev/null 2>&1; then
++	exec /usr/bin/openbox &
++    fi
 +fi
 +
  # Start the LXQt session

@@ -6,7 +6,7 @@ Version: 0.8.0
 Release: 0.%git.1
 Source0: %{name}-%{git}.tar.xz
 %else
-Release: 9
+Release: 10
 Source0: http://lxqt.org/downloads/lxqt/%{version}/%{name}-%{version}.tar.xz
 %endif
 Summary: Common files for the LXQt desktop
@@ -25,6 +25,7 @@ BuildArch: noarch
 Requires: xdg-user-dirs
 # workaround for missing icons in desktop files on lxqt desktop
 Requires: sed
+Requires: openbox
 
 %description
 Common files for the LXQt desktop.
