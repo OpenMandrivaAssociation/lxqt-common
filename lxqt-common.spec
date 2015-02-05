@@ -6,7 +6,7 @@ Version: 0.8.0
 Release: 0.%git.1
 Source0: %{name}-%{git}.tar.xz
 %else
-Release: 10
+Release: 11
 Source0: http://lxqt.org/downloads/lxqt/%{version}/%{name}-%{version}.tar.xz
 %endif
 Summary: Common files for the LXQt desktop
@@ -37,6 +37,7 @@ Common files for the LXQt desktop.
 %setup -q
 %endif
 %apply_patches
+
 %cmake -DUSE_QT5:BOOL=ON
 
 %build

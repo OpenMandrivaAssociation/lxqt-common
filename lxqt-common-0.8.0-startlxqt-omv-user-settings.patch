@@ -1,6 +1,6 @@
 diff -Naur lxqt-common-0.8.0/startlxqt.in lxqt-common-0.8.0.tpg/startlxqt.in
---- lxqt-common-0.8.0/startlxqt.in	2015-01-21 22:55:44.898037482 +0000
-+++ lxqt-common-0.8.0.tpg/startlxqt.in	2015-01-21 23:04:26.839475358 +0000
+--- lxqt-common-0.8.0/startlxqt.in	2015-02-05 18:25:21.000000000 +0000
++++ lxqt-common-0.8.0.tpg/startlxqt.in	2015-02-05 18:29:20.237098228 +0000
 @@ -1,5 +1,10 @@
  #!/bin/sh
  
@@ -12,7 +12,7 @@ diff -Naur lxqt-common-0.8.0/startlxqt.in lxqt-common-0.8.0.tpg/startlxqt.in
  if [ -z "$XDG_DATA_HOME" ]; then
      export XDG_DATA_HOME="$HOME/.local/share"
  fi
-@@ -42,5 +47,51 @@
+@@ -42,5 +47,57 @@
  
  export XDG_CURRENT_DESKTOP="LXQt"
  
@@ -32,27 +32,33 @@ diff -Naur lxqt-common-0.8.0/startlxqt.in lxqt-common-0.8.0.tpg/startlxqt.in
 +    done
 +fi
 +
-+#(tpg) add special icons on DESKTOP
-+USER_DESKTOP=`xdg-user-dir DESKTOP`
-+if [ ! -e $USER_DESKTOP/om-welcome.desktop ]; then
-+    cp -f /usr/share/applications/om-welcome.desktop $USER_DESKTOP 2> /dev/null
-+# (tpg) workaround for LxQt not displaying icons for desktop files on LxQt desktop
-+    sed -i -e "s#^Icon=.*#Icon=/usr/share/icons/openmandriva.svg#g" $USER_DESKTOP/om-welcome.desktop
-+    chmod +x $USER_DESKTOP/om-welcome.desktop
-+fi
++if [ ! -e $XDG_CONFIG_HOME/lxqt.firstboot ]; then
++    #(tpg) add special icons on DESKTOP
++    USER_DESKTOP=`xdg-user-dir DESKTOP`
 +
-+if [ ! -e $USER_DESKTOP/join.desktop ]; then
-+    cp -f /usr/share/applications/join.desktop $USER_DESKTOP 2> /dev/null
-+# (tpg) workaround for LxQt not displaying icons for desktop files on LxQt desktop
-+    sed -i -e "s#^Icon=.*#Icon=/usr/share/icons/omv-join-now.png#g" $USER_DESKTOP/join.desktop
-+    chmod +x $USER_DESKTOP/join.desktop
-+fi
++    if [ ! -e $USER_DESKTOP/om-welcome.desktop ]; then
++	cp -f /usr/share/applications/om-welcome.desktop $USER_DESKTOP 2> /dev/null
++	# (tpg) workaround for LxQt not displaying icons for desktop files on LxQt desktop
++	sed -i -e "s#^Icon=.*#Icon=/usr/share/icons/openmandriva.svg#g" $USER_DESKTOP/om-welcome.desktop
++	chmod +x $USER_DESKTOP/om-welcome.desktop
++    fi
 +
-+if [ ! -e $USER_DESKTOP/donate.desktop ]; then
-+    cp -f /usr/share/applications/donate.desktop $USER_DESKTOP 2> /dev/null
-+# (tpg) workaround for LxQt not displaying icons for desktop files on LxQt desktop
-+    sed -i -e "s#^Icon=.*#Icon=/usr/share/icons/omv-donate.png#g" $USER_DESKTOP/donate.desktop
-+    chmod +x $USER_DESKTOP/donate.desktop
++    if [ ! -e $USER_DESKTOP/join.desktop ]; then
++	cp -f /usr/share/applications/join.desktop $USER_DESKTOP 2> /dev/null
++	# (tpg) workaround for LxQt not displaying icons for desktop files on LxQt desktop
++	sed -i -e "s#^Icon=.*#Icon=/usr/share/icons/omv-join-now.png#g" $USER_DESKTOP/join.desktop
++	chmod +x $USER_DESKTOP/join.desktop
++    fi
++
++    if [ ! -e $USER_DESKTOP/donate.desktop ]; then
++	cp -f /usr/share/applications/donate.desktop $USER_DESKTOP 2> /dev/null
++        # (tpg) workaround for LxQt not displaying icons for desktop files on LxQt desktop
++	sed -i -e "s#^Icon=.*#Icon=/usr/share/icons/omv-donate.png#g" $USER_DESKTOP/donate.desktop
++	chmod +x $USER_DESKTOP/donate.desktop
++    fi
++
++    touch $XDG_CONFIG_HOME/lxqt.firstboot
++
 +fi
 +
 +# workaround for openbox not being start on first boot
