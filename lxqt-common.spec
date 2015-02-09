@@ -1,12 +1,12 @@
 %define git 0
 
 Name: lxqt-common
-Version: 0.8.0
+Version: 0.9.0
 %if %git
 Release: 0.%git.1
 Source0: %{name}-%{git}.tar.xz
 %else
-Release: 11
+Release: 1
 Source0: http://lxqt.org/downloads/lxqt/%{version}/%{name}-%{version}.tar.xz
 %endif
 Summary: Common files for the LXQt desktop
@@ -17,7 +17,7 @@ Patch0: lxqt-common-0.8.0-omv-settings.patch
 Patch1: lxqt-common-0.8.0-add-xdg_data_dir.patch
 Patch2: lxqt-common-0.8.0-startlxqt-omv-user-settings.patch
 BuildRequires: cmake
-BuildRequires: cmake(lxqt-qt5)
+BuildRequires: cmake(lxqt)
 BuildRequires: qt5-devel
 BuildRequires: cmake(Qt5LinguistTools)
 BuildRequires: cmake(Qt5X11Extras)
