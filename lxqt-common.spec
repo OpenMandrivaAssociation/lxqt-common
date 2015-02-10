@@ -75,14 +75,17 @@ for desktop in %{buildroot}%{_sysconfdir}/xdg/autostart/*.desktop; do
 done
 
 %files
+%dir %{_datadir}/lxqt/openbox
 %{_datadir}/lxqt/themes
 %{_sysconfdir}/qt5/lxqt
+%{_sysconfdir}/qt5/menus/lxqt-applications.menu
 %{_sysconfdir}/qt5/pcmanfm-qt
 %{_sysconfdir}/xdg/autostart/lxqt*
 %{_bindir}/startlxqt
 %{_datadir}/apps/kdm/sessions/lxqt.desktop
 %{_datadir}/lxqt/graphics
-%{_datadir}/lxqt-qt5/openbox
+%{_datadir}/lxqt/openbox/menu.xml
+%{_datadir}/lxqt/openbox/rc.xml.in
 %{_datadir}/xsessions/lxqt.desktop
 %{_datadir}/apps/kdm/sessions/02lxqt.desktop
 %{_sysconfdir}/X11/wmsession.d/02LXQt
