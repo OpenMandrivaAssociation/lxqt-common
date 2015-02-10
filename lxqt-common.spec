@@ -82,6 +82,7 @@ done
 %{_sysconfdir}/qt5/menus/lxqt-applications.menu
 %{_sysconfdir}/qt5/pcmanfm-qt
 %{_sysconfdir}/xdg/autostart/lxqt*
+%{_sysconfdir}/X11/wmsession.d/02LXQt
 %{_bindir}/startlxqt
 %{_datadir}/apps/kdm/sessions/lxqt.desktop
 %{_datadir}/lxqt/graphics
@@ -89,4 +90,5 @@ done
 %{_datadir}/lxqt/openbox/rc.xml.in
 %{_datadir}/xsessions/lxqt.desktop
 %{_datadir}/apps/kdm/sessions/02lxqt.desktop
-%{_sysconfdir}/X11/wmsession.d/02LXQt
+%{_datadir}/desktop-directories/lxqt-leave.directory
+%{_iconsdir}/hicolor/scalable/places/start-here-lxqt.svg
