@@ -6,7 +6,7 @@ Version: 0.9.0
 Release: 0.%git.1
 Source0: %{name}-%{git}.tar.xz
 %else
-Release: 1
+Release: 2
 Source0: http://lxqt.org/downloads/lxqt/%{version}/%{name}-%{version}.tar.xz
 %endif
 Summary: Common files for the LXQt desktop
@@ -21,6 +21,7 @@ BuildRequires: cmake(lxqt)
 BuildRequires: qt5-devel
 BuildRequires: cmake(Qt5LinguistTools)
 BuildRequires: cmake(Qt5X11Extras)
+BuildRequires: desktop-file-utils
 BuildArch: noarch
 Requires: xdg-user-dirs
 # workaround for missing icons in desktop files on lxqt desktop
@@ -41,6 +42,8 @@ Common files for the LXQt desktop.
 %cmake -DUSE_QT5:BOOL=ON
 
 %build
+sed -i -e's/XDG_CURRENT_DESKTOP="LXQt"/XDG_CURRENT_DESKTOP="X-LXQt"/g" startlxqt*
+
 %make -C build
 
 %install
@@ -67,6 +70,12 @@ EXEC=/usr/bin/startlxqt
 SCRIPT:
 exec /usr/bin/startlxqt
 EOF
+
+desktop-file-validate %{buildroot}/%{_datadir}/xsessions/lxqt.desktop
+
+for desktop in %{buildroot}%{_sysconfdir}/xdg/autostart/*.desktop; do
+	desktop-file-edit --remove-only-show-in=LXQt --add-only-show-in=X-LXQt ${desktop}
+done
 
 %files
 %{_datadir}/lxqt/themes
