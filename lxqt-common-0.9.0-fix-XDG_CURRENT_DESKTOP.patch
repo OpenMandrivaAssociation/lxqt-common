@@ -1,0 +1,12 @@
+diff -Naur lxqt-common-0.9.0/startlxqt.in lxqt-common-0.9.0.tpg/startlxqt.in
+--- lxqt-common-0.9.0/startlxqt.in	2015-02-10 20:24:30.000000000 +0000
++++ lxqt-common-0.9.0.tpg/startlxqt.in	2015-02-10 20:25:57.506619841 +0000
+@@ -45,7 +45,7 @@
+ # use lxqt-applications.menu for main app menu
+ export XDG_MENU_PREFIX="lxqt-"
+ 
+-export XDG_CURRENT_DESKTOP="LXQt"
++export XDG_CURRENT_DESKTOP="X-LXQt"
+ 
+ # (tpg) copy default settings because LxQt cannot read them from /etc
+ if test "x$XDG_CONFIG_HOME" = "x"

@@ -14,8 +14,8 @@ URL: http://lxqt.org/
 License: GPL
 Group: Graphical desktop/KDE
 Patch0: lxqt-common-0.8.0-omv-settings.patch
-Patch1: lxqt-common-0.8.0-add-xdg_data_dir.patch
 Patch2: lxqt-common-0.8.0-startlxqt-omv-user-settings.patch
+Patch3: lxqt-common-0.9.0-fix-XDG_CURRENT_DESKTOP.patch
 BuildRequires: cmake
 BuildRequires: cmake(lxqt)
 BuildRequires: qt5-devel
@@ -38,12 +38,9 @@ Common files for the LXQt desktop.
 %setup -q
 %endif
 %apply_patches
-
 %cmake -DUSE_QT5:BOOL=ON
 
 %build
-sed -i -e's/XDG_CURRENT_DESKTOP="LXQt"/XDG_CURRENT_DESKTOP="X-LXQt"/g" startlxqt*
-
 %make -C build
 
 %install
