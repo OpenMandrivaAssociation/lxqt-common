@@ -89,5 +89,5 @@ done
 %{_datadir}/lxqt/openbox/rc.xml.in
 %{_datadir}/xsessions/lxqt.desktop
 %{_datadir}/apps/kdm/sessions/02lxqt.desktop
-%{_datadir}/desktop-directories/lxqt-leave.directory
+%{_datadir}/desktop-directories/lxqt-*.directory
 %{_iconsdir}/hicolor/scalable/places/start-here-lxqt.svg
