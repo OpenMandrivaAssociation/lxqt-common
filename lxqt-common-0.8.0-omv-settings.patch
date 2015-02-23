@@ -1,6 +1,23 @@
-diff -Naur lxqt-common-0.8.0/config/pcmanfm-qt/lxqt/settings.conf.in lxqt-common-0.8.0.tpg/config/pcmanfm-qt/lxqt/settings.conf.in
---- lxqt-common-0.8.0/config/pcmanfm-qt/lxqt/settings.conf.in	2014-08-23 09:12:54.000000000 +0000
-+++ lxqt-common-0.8.0.tpg/config/pcmanfm-qt/lxqt/settings.conf.in	2015-01-20 20:39:28.261508017 +0000
+diff -Naur lxqt-common-0.9.1/config/lxqt.conf lxqt-common-0.9.1.tpg/config/lxqt.conf
+--- lxqt-common-0.9.1/config/lxqt.conf	2015-02-14 13:42:58.000000000 +0000
++++ lxqt-common-0.9.1.tpg/config/lxqt.conf	2015-02-23 23:06:32.606770037 +0000
+@@ -1,9 +1,12 @@
+ [General]
+-theme=frost
++theme=Light
+ icon_theme=oxygen
+ single_click_activate=false
+ tool_button_style=ToolButtonTextBesideIcon
+ 
++[Mouse]
++cursor_theme=wonderland
++
+ [Qt]
+ font="Sans,11,-1,5,50,0,0,0,0,0"
+ doubleClickInterval=400
+diff -Naur lxqt-common-0.9.1/config/pcmanfm-qt/lxqt/settings.conf.in lxqt-common-0.9.1.tpg/config/pcmanfm-qt/lxqt/settings.conf.in
+--- lxqt-common-0.9.1/config/pcmanfm-qt/lxqt/settings.conf.in	2015-02-14 13:42:58.000000000 +0000
++++ lxqt-common-0.9.1.tpg/config/pcmanfm-qt/lxqt/settings.conf.in	2015-02-23 23:05:00.544353974 +0000
 @@ -4,7 +4,7 @@
  TerminalCommand=
  Archiver=file-roller
@@ -19,9 +36,9 @@ diff -Naur lxqt-common-0.8.0/config/pcmanfm-qt/lxqt/settings.conf.in lxqt-common
  BgColor=#000000
  FgColor=#ffffff
  ShadowColor=#000000
-diff -Naur lxqt-common-0.8.0/config/session.conf lxqt-common-0.8.0.tpg/config/session.conf
---- lxqt-common-0.8.0/config/session.conf	2014-08-23 09:12:54.000000000 +0000
-+++ lxqt-common-0.8.0.tpg/config/session.conf	2015-01-20 20:41:02.579980816 +0000
+diff -Naur lxqt-common-0.9.1/config/session.conf lxqt-common-0.9.1.tpg/config/session.conf
+--- lxqt-common-0.9.1/config/session.conf	2015-02-14 13:42:58.000000000 +0000
++++ lxqt-common-0.9.1.tpg/config/session.conf	2015-02-23 23:05:00.544353974 +0000
 @@ -3,10 +3,12 @@
  
  [Environment]
