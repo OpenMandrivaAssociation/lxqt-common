@@ -1,6 +1,6 @@
-diff -Naur lxqt-common-0.8.0/startlxqt.in lxqt-common-0.8.0.tpg/startlxqt.in
---- lxqt-common-0.8.0/startlxqt.in	2015-02-05 18:25:21.000000000 +0000
-+++ lxqt-common-0.8.0.tpg/startlxqt.in	2015-02-05 18:29:20.237098228 +0000
+diff -Naur lxqt-common-0.9.1/startlxqt.in lxqt-common-0.9.1.tpg/startlxqt.in
+--- lxqt-common-0.9.1/startlxqt.in	2015-02-14 13:42:58.000000000 +0000
++++ lxqt-common-0.9.1.tpg/startlxqt.in	2015-02-27 00:56:11.433569955 +0000
 @@ -1,5 +1,10 @@
  #!/bin/sh
  
@@ -12,7 +12,7 @@ diff -Naur lxqt-common-0.8.0/startlxqt.in lxqt-common-0.8.0.tpg/startlxqt.in
  if [ -z "$XDG_DATA_HOME" ]; then
      export XDG_DATA_HOME="$HOME/.local/share"
  fi
-@@ -42,5 +47,57 @@
+@@ -42,5 +47,68 @@
  
  export XDG_CURRENT_DESKTOP="LXQt"
  
@@ -37,10 +37,12 @@ diff -Naur lxqt-common-0.8.0/startlxqt.in lxqt-common-0.8.0.tpg/startlxqt.in
 +    USER_DESKTOP=`xdg-user-dir DESKTOP`
 +
 +    if [ ! -e $USER_DESKTOP/om-welcome.desktop ]; then
-+	cp -f /usr/share/applications/om-welcome.desktop $USER_DESKTOP 2> /dev/null
-+	# (tpg) workaround for LxQt not displaying icons for desktop files on LxQt desktop
-+	sed -i -e "s#^Icon=.*#Icon=/usr/share/icons/openmandriva.svg#g" $USER_DESKTOP/om-welcome.desktop
-+	chmod +x $USER_DESKTOP/om-welcome.desktop
++	if [ -e /usr/share/applications/om-welcome.desktop ]; then
++	    cp -f /usr/share/applications/om-welcome.desktop $USER_DESKTOP 2> /dev/null
++	    # (tpg) workaround for LxQt not displaying icons for desktop files on LxQt desktop
++	    sed -i -e "s#^Icon=.*#Icon=/usr/share/icons/openmandriva.svg#g" $USER_DESKTOP/om-welcome.desktop
++	    chmod +x $USER_DESKTOP/om-welcome.desktop
++	fi
 +    fi
 +
 +    if [ ! -e $USER_DESKTOP/join.desktop ]; then
@@ -55,6 +57,15 @@ diff -Naur lxqt-common-0.8.0/startlxqt.in lxqt-common-0.8.0.tpg/startlxqt.in
 +        # (tpg) workaround for LxQt not displaying icons for desktop files on LxQt desktop
 +	sed -i -e "s#^Icon=.*#Icon=/usr/share/icons/omv-donate.png#g" $USER_DESKTOP/donate.desktop
 +	chmod +x $USER_DESKTOP/donate.desktop
++    fi
++
++    if [ ! -e $USER_DESKTOP/calamares.desktop ]; then
++	if [ -e /usr/share/applications/calamares.desktop ]; then
++	    cp -f /usr/share/applications/calamares.desktop $USER_DESKTOP 2> /dev/null
++	    # (tpg) workaround for LxQt not displaying icons for desktop files on LxQt desktop
++	    sed -i -e "s#^Icon=.*#Icon=/usr/share/icons/openmandriva.svg#g" $USER_DESKTOP/calamares.desktop
++	    chmod +x $USER_DESKTOP/calamares.desktop
++	fi
 +    fi
 +
 +    touch $XDG_CONFIG_HOME/lxqt.firstboot
