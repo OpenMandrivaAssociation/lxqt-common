@@ -6,7 +6,7 @@ Version: 0.9.1
 Release: 0.%git.1
 Source0: %{name}-%{git}.tar.xz
 %else
-Release: 4
+Release: 5
 Source0: http://lxqt.org/downloads/lxqt/%{version}/%{name}-%{version}.tar.xz
 %endif
 Summary: Common files for the LXQt desktop
@@ -15,7 +15,6 @@ License: GPL
 Group: Graphical desktop/KDE
 Patch0: lxqt-common-0.8.0-omv-settings.patch
 Patch2: lxqt-common-0.8.0-startlxqt-omv-user-settings.patch
-Patch3: lxqt-common-0.9.0-fix-XDG_CURRENT_DESKTOP.patch
 BuildRequires: cmake
 BuildRequires: cmake(lxqt)
 BuildRequires: qt5-devel
@@ -58,6 +57,7 @@ TryExec=/usr/bin/startlxqt
 Exec=LXQt
 Icon=
 Type=Application
+DesktopNames=LXQt
 EOF
 
 mkdir -p %{buildroot}%{_sysconfdir}/X11/wmsession.d
