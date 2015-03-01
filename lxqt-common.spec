@@ -6,7 +6,7 @@ Version: 0.9.1
 Release: 0.%git.1
 Source0: %{name}-%{git}.tar.xz
 %else
-Release: 7
+Release: 8
 Source0: http://lxqt.org/downloads/lxqt/%{version}/%{name}-%{version}.tar.xz
 %endif
 Summary: Common files for the LXQt desktop
@@ -14,6 +14,7 @@ URL: http://lxqt.org/
 License: GPL
 Group: Graphical desktop/KDE
 Patch0: lxqt-common-0.8.0-omv-settings.patch
+Patch1: lxqt-common-0.9.1-fix-path-lxqt-policykit-agent.patch
 Patch2: lxqt-common-0.8.0-startlxqt-omv-user-settings.patch
 BuildRequires: cmake
 BuildRequires: cmake(lxqt)

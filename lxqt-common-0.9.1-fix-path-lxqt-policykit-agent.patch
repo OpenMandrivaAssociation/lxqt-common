@@ -1,0 +1,14 @@
+diff -Naur lxqt-common-0.9.1/autostart/lxqt-policykit-agent.desktop.in lxqt-common-0.9.1.tpg/autostart/lxqt-policykit-agent.desktop.in
+--- lxqt-common-0.9.1/autostart/lxqt-policykit-agent.desktop.in	2015-02-14 13:42:58.000000000 +0000
++++ lxqt-common-0.9.1.tpg/autostart/lxqt-policykit-agent.desktop.in	2015-03-01 23:43:28.164100273 +0000
+@@ -1,8 +1,8 @@
+ [Desktop Entry]
+ Type=Application
+ Name=PolicyKit Handler
+-TryExec=lxqt-policykit-agent
+-Exec=lxqt-policykit-agent
++TryExec=/usr/libexec/lxqt-policykit-agent
++Exec=/usr/libexec/lxqt-policykit-agent
+ OnlyShowIn=LXQt;
+ X-LXQt-Module=true
+ 
