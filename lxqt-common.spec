@@ -6,7 +6,7 @@ Version: 0.9.1
 Release: 0.%git.1
 Source0: %{name}-%{git}.tar.xz
 %else
-Release: 5
+Release: 6
 Source0: http://lxqt.org/downloads/lxqt/%{version}/%{name}-%{version}.tar.xz
 %endif
 Summary: Common files for the LXQt desktop
@@ -71,10 +71,6 @@ exec /usr/bin/startlxqt
 EOF
 
 desktop-file-validate %{buildroot}/%{_datadir}/xsessions/lxqt.desktop
-
-for desktop in %{buildroot}%{_sysconfdir}/xdg/autostart/*.desktop; do
-	desktop-file-edit --remove-only-show-in=LXQt --add-only-show-in=X-LXQt ${desktop}
-done
 
 %files
 %dir %{_datadir}/lxqt/openbox
