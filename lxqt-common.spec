@@ -6,7 +6,7 @@ Version: 0.9.1
 Release: 0.%git.1
 Source0: %{name}-%{git}.tar.xz
 %else
-Release: 6
+Release: 7
 Source0: http://lxqt.org/downloads/lxqt/%{version}/%{name}-%{version}.tar.xz
 %endif
 Summary: Common files for the LXQt desktop
@@ -72,13 +72,17 @@ EOF
 
 desktop-file-validate %{buildroot}/%{_datadir}/xsessions/lxqt.desktop
 
+# (tpg) fix bug #1097
+mkdir -p %{buildroot}%{_sysconfdir}/xdg
+mv -f %{buildroot}%{_sysconfdir}/qt5/menus/lxqt-applications.menu %{buildroot}%{_sysconfdir}/xdg/menus/lxqt-applications.menu
+
 %files
 %dir %{_datadir}/lxqt/openbox
 %{_datadir}/lxqt/themes
 %{_sysconfdir}/qt5/lxqt
-%{_sysconfdir}/qt5/menus/lxqt-applications.menu
 %{_sysconfdir}/qt5/pcmanfm-qt
 %{_sysconfdir}/xdg/autostart/lxqt*
+%{_sysconfdir}/xdg/menus/lxqt-applications.menu
 %{_sysconfdir}/X11/wmsession.d/02LXQt
 %{_bindir}/startlxqt
 %{_datadir}/apps/kdm/sessions/lxqt.desktop
