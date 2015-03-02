@@ -6,7 +6,7 @@ Version: 0.9.1
 Release: 0.%git.1
 Source0: %{name}-%{git}.tar.xz
 %else
-Release: 8
+Release: 9
 Source0: http://lxqt.org/downloads/lxqt/%{version}/%{name}-%{version}.tar.xz
 %endif
 Summary: Common files for the LXQt desktop
@@ -29,6 +29,7 @@ Requires: xdg-user-dirs
 Requires: sed
 Requires: openbox
 Requires: desktop-common-data
+Requires: lxmenu-data
 
 %description
 Common files for the LXQt desktop.
