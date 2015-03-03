@@ -1,6 +1,6 @@
 diff -Naur lxqt-common-0.9.1/config/lxqt.conf lxqt-common-0.9.1.tpg/config/lxqt.conf
 --- lxqt-common-0.9.1/config/lxqt.conf	2015-02-14 13:42:58.000000000 +0000
-+++ lxqt-common-0.9.1.tpg/config/lxqt.conf	2015-02-23 23:06:32.606770037 +0000
++++ lxqt-common-0.9.1.tpg/config/lxqt.conf	2015-03-03 17:58:40.349100568 +0000
 @@ -1,9 +1,12 @@
  [General]
 -theme=frost
@@ -17,16 +17,23 @@ diff -Naur lxqt-common-0.9.1/config/lxqt.conf lxqt-common-0.9.1.tpg/config/lxqt.
  doubleClickInterval=400
 diff -Naur lxqt-common-0.9.1/config/pcmanfm-qt/lxqt/settings.conf.in lxqt-common-0.9.1.tpg/config/pcmanfm-qt/lxqt/settings.conf.in
 --- lxqt-common-0.9.1/config/pcmanfm-qt/lxqt/settings.conf.in	2015-02-14 13:42:58.000000000 +0000
-+++ lxqt-common-0.9.1.tpg/config/pcmanfm-qt/lxqt/settings.conf.in	2015-02-23 23:05:00.544353974 +0000
-@@ -4,7 +4,7 @@
++++ lxqt-common-0.9.1.tpg/config/pcmanfm-qt/lxqt/settings.conf.in	2015-03-03 18:02:19.059024381 +0000
+@@ -1,11 +1,11 @@
+ [System]
+ IconThemeName=elementary
+-SuCommand=gksu %s
++SuCommand=pkexec %s
  TerminalCommand=
- Archiver=file-roller
+-Archiver=file-roller
++Archiver=ark
  SIUnit=false
 -TerminalDirCommand=xterm
+-TerminalExecCommand=xterm -e %s
 +TerminalDirCommand=qterminal
- TerminalExecCommand=xterm -e %s
++TerminalExecCommand=qterminal -e %s
  
  [Behavior]
+ BookmarkOpenMethod=0
 @@ -15,7 +15,7 @@
  
  [Desktop]
@@ -38,7 +45,7 @@ diff -Naur lxqt-common-0.9.1/config/pcmanfm-qt/lxqt/settings.conf.in lxqt-common
  ShadowColor=#000000
 diff -Naur lxqt-common-0.9.1/config/session.conf lxqt-common-0.9.1.tpg/config/session.conf
 --- lxqt-common-0.9.1/config/session.conf	2015-02-14 13:42:58.000000000 +0000
-+++ lxqt-common-0.9.1.tpg/config/session.conf	2015-02-23 23:05:00.544353974 +0000
++++ lxqt-common-0.9.1.tpg/config/session.conf	2015-03-03 17:58:40.350100595 +0000
 @@ -3,10 +3,12 @@
  
  [Environment]
