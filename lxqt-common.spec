@@ -75,10 +75,6 @@ EOF
 
 desktop-file-validate %{buildroot}/%{_datadir}/xsessions/lxqt.desktop
 
-# (tpg) fix bug #1097
-mkdir -p %{buildroot}%{_sysconfdir}/xdg/menus
-mv -f %{buildroot}%{_sysconfdir}/qt5/menus/lxqt-applications.menu %{buildroot}%{_sysconfdir}/xdg/menus/lxqt-applications.menu
-
 %files
 %dir %{_datadir}/lxqt/openbox
 %{_datadir}/lxqt/themes
