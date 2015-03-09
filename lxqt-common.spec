@@ -6,7 +6,7 @@ Version: 0.9.1
 Release: 0.%git.1
 Source0: %{name}-%{git}.tar.xz
 %else
-Release: 10
+Release: 11
 Source0: http://lxqt.org/downloads/lxqt/%{version}/%{name}-%{version}.tar.xz
 %endif
 Summary: Common files for the LXQt desktop
@@ -42,7 +42,7 @@ Common files for the LXQt desktop.
 %endif
 %apply_patches
 
-%cmake -DUSE_QT5:BOOL=ON
+%cmake
 
 %build
 %make -C build
@@ -77,13 +77,15 @@ desktop-file-validate %{buildroot}/%{_datadir}/xsessions/lxqt.desktop
 
 %files
 %dir %{_datadir}/lxqt/openbox
-%{_datadir}/lxqt/themes
-%{_sysconfdir}/qt5/lxqt
-%{_sysconfdir}/qt5/pcmanfm-qt
+%dir %{_sysconfdir}/lxqt
+%dir %{_sysconfdir}/xdg/pcmanfm-qt/lxqt
+%{_sysconfdir}/lxqt/*.conf
+%{_sysconfdir}/xdg/pcmanfm-qt/lxqt/*.conf
 %{_sysconfdir}/xdg/autostart/lxqt*
 %{_sysconfdir}/xdg/menus/lxqt-applications.menu
 %{_sysconfdir}/X11/wmsession.d/02LXQt
 %{_bindir}/startlxqt
+%{_datadir}/lxqt/themes
 %{_datadir}/apps/kdm/sessions/lxqt.desktop
 %{_datadir}/lxqt/graphics
 %{_datadir}/lxqt/openbox/menu.xml
