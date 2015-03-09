@@ -77,9 +77,9 @@ desktop-file-validate %{buildroot}/%{_datadir}/xsessions/lxqt.desktop
 
 %files
 %dir %{_datadir}/lxqt/openbox
-%dir %{_sysconfdir}/lxqt
+%dir %{_sysconfdir}/xdg/lxqt
 %dir %{_sysconfdir}/xdg/pcmanfm-qt/lxqt
-%{_sysconfdir}/lxqt/*.conf
+%{_sysconfdir}/xdg/lxqt/*.conf
 %{_sysconfdir}/xdg/pcmanfm-qt/lxqt/*.conf
 %{_sysconfdir}/xdg/autostart/lxqt*
 %{_sysconfdir}/xdg/menus/lxqt-applications.menu
