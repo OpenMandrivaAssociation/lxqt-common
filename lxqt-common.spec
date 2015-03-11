@@ -19,6 +19,7 @@ Patch2: lxqt-common-0.8.0-startlxqt-omv-user-settings.patch
 BuildRequires: cmake
 BuildRequires: qmake5
 BuildRequires: cmake(lxqt)
+BuildRequires: cmake(Qt5LinguistTools)
 BuildRequires: desktop-file-utils
 BuildRequires: desktop-common-data
 BuildArch: noarch
@@ -40,7 +41,7 @@ Common files for the LXQt desktop.
 %endif
 %apply_patches
 
-%cmake
+%cmake_qt5
 
 %build
 %make -C build
