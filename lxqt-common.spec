@@ -17,10 +17,8 @@ Patch0: lxqt-common-0.8.0-omv-settings.patch
 Patch1: lxqt-common-0.9.1-fix-path-lxqt-policykit-agent.patch
 Patch2: lxqt-common-0.8.0-startlxqt-omv-user-settings.patch
 BuildRequires: cmake
+BuildRequires: qmake5
 BuildRequires: cmake(lxqt)
-BuildRequires: qt5-devel
-BuildRequires: cmake(Qt5LinguistTools)
-BuildRequires: cmake(Qt5X11Extras)
 BuildRequires: desktop-file-utils
 BuildRequires: desktop-common-data
 BuildArch: noarch
