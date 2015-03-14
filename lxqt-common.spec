@@ -6,7 +6,7 @@ Version: 0.9.1
 Release: 0.%git.1
 Source0: %{name}-%{git}.tar.xz
 %else
-Release: 12
+Release: 13
 Source0: http://lxqt.org/downloads/lxqt/%{version}/%{name}-%{version}.tar.xz
 %endif
 Summary: Common files for the LXQt desktop
@@ -28,6 +28,7 @@ Requires: xdg-user-dirs
 Requires: sed
 Requires: openbox
 Requires: desktop-common-data
+Requires: distro-theme-OpenMandriva
 Requires: lxmenu-data
 
 %description
@@ -73,6 +74,14 @@ exec /usr/bin/startlxqt
 EOF
 
 desktop-file-validate %{buildroot}/%{_datadir}/xsessions/lxqt.desktop
+
+# (tpg) openmandriva icons
+for i in `ls -1 %{buildroot}/usr/share/lxqt/themes`; do
+    ln -sf %{_iconsdir}/openmandriva.svg %{buildroot}%{_datadir}/lxqt/themes/$i/openmandriva.svg
+    sed -i -e "s/mainmenu.svg/openmandriva.svg/g" %{buildroot}%{_datadir}/lxqt/themes/$i/lxqt-panel.qss
+    sed -i 's|file=.*$|file=default.png|' %{buildroot}%{_datadir}/lxqt/themes/$i/wallpaper.cfg
+    ln -sf %{_datadir}/mdk/backgrounds/default.png %{buildroot}%{_datadir}/lxqt/themes/$i/default.png
+done
 
 %files
 %dir %{_datadir}/lxqt/openbox
