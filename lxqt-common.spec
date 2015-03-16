@@ -6,7 +6,7 @@ Version: 0.9.1
 Release: 0.%git.1
 Source0: %{name}-%{git}.tar.xz
 %else
-Release: 13
+Release: 14
 Source0: http://lxqt.org/downloads/lxqt/%{version}/%{name}-%{version}.tar.xz
 %endif
 Summary: Common files for the LXQt desktop
@@ -63,16 +63,6 @@ Type=Application
 DesktopNames=LXQt
 EOF
 
-mkdir -p %{buildroot}%{_sysconfdir}/X11/wmsession.d
-cat >%{buildroot}%{_sysconfdir}/X11/wmsession.d/02LXQt <<'EOF'
-NAME=LXQt
-ICON=kde-wmsession.xpm
-DESC=The Lightweight X Qt desktop
-EXEC=/usr/bin/startlxqt
-SCRIPT:
-exec /usr/bin/startlxqt
-EOF
-
 desktop-file-validate %{buildroot}/%{_datadir}/xsessions/lxqt.desktop
 
 # (tpg) openmandriva icons
@@ -91,7 +81,6 @@ done
 %{_sysconfdir}/xdg/pcmanfm-qt/lxqt/*.conf
 %{_sysconfdir}/xdg/autostart/lxqt*
 %{_sysconfdir}/xdg/menus/lxqt-applications.menu
-%{_sysconfdir}/X11/wmsession.d/02LXQt
 %{_bindir}/startlxqt
 %{_datadir}/lxqt/themes
 %{_datadir}/apps/kdm/sessions/lxqt.desktop
