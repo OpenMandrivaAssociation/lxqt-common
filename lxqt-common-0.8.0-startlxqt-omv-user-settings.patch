@@ -63,7 +63,7 @@ diff -Naur lxqt-common-0.9.1/startlxqt.in lxqt-common-0.9.1.tpg/startlxqt.in
 +	if [ -e /usr/share/applications/calamares.desktop ]; then
 +	    cp -f /usr/share/applications/calamares.desktop $USER_DESKTOP 2> /dev/null
 +	    # (tpg) workaround for LxQt not displaying icons for desktop files on LxQt desktop
-+	    sed -i -e "s#^Icon=.*#Icon=/usr/share/icons/openmandriva.svg#g" $USER_DESKTOP/calamares.desktop
++	    sed -i -e "s#^Icon=.*#Icon=/usr/share/icons/openmandriva-install.svg#g" $USER_DESKTOP/calamares.desktop
 +	    chmod +x $USER_DESKTOP/calamares.desktop
 +	fi
 +    fi
