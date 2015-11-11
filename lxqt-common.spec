@@ -1,13 +1,13 @@
 %define git 0
 
 Name: lxqt-common
-Version: 0.9.1
+Version: 0.10.0
 %if %git
 Release: 0.%git.1
 Source0: %{name}-%{git}.tar.xz
 %else
-Release: 16
-Source0: http://lxqt.org/downloads/lxqt/%{version}/%{name}-%{version}.tar.xz
+Release: 1
+Source0: https://github.com/lxde/%{name}/archive/%{version}.tar.gz
 %endif
 Summary: Common files for the LXQt desktop
 URL: http://lxqt.org/
@@ -16,6 +16,7 @@ Group: Graphical desktop/KDE
 Patch0: lxqt-common-0.8.0-omv-settings.patch
 Patch1: lxqt-common-0.9.1-fix-path-lxqt-policykit-agent.patch
 Patch2: lxqt-common-0.8.0-startlxqt-omv-user-settings.patch
+Patch3: lxqt-common-0.10.0-kdm-sessions-path.patch
 BuildRequires: cmake
 BuildRequires: qmake5
 BuildRequires: cmake(lxqt)
@@ -83,11 +84,11 @@ done
 %{_sysconfdir}/xdg/menus/lxqt-applications.menu
 %{_bindir}/startlxqt
 %{_datadir}/lxqt/themes
-%{_datadir}/apps/kdm/sessions/lxqt.desktop
 %{_datadir}/lxqt/graphics
 %{_datadir}/lxqt/openbox/menu.xml
 %{_datadir}/lxqt/openbox/rc.xml.in
 %{_datadir}/xsessions/lxqt.desktop
 %{_datadir}/apps/kdm/sessions/02lxqt.desktop
+%{_datadir}/apps/kdm/sessions/lxqt.desktop
 %{_datadir}/desktop-directories/lxqt-*.directory
 %{_iconsdir}/hicolor/scalable/places/start-here-lxqt.svg

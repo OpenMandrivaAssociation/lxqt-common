@@ -1,6 +1,5 @@
-diff -Naur lxqt-common-0.9.1/config/lxqt.conf lxqt-common-0.9.1.tpg/config/lxqt.conf
---- lxqt-common-0.9.1/config/lxqt.conf	2015-02-14 13:42:58.000000000 +0000
-+++ lxqt-common-0.9.1.tpg/config/lxqt.conf	2015-03-03 17:58:40.349100568 +0000
+--- lxqt-common-0.10.0/config/lxqt.conf.0000~	2015-10-08 18:38:12.000000000 +0200
++++ lxqt-common-0.10.0/config/lxqt.conf	2015-11-11 17:57:50.684549847 +0100
 @@ -1,9 +1,12 @@
  [General]
 -theme=frost
@@ -15,9 +14,8 @@ diff -Naur lxqt-common-0.9.1/config/lxqt.conf lxqt-common-0.9.1.tpg/config/lxqt.
  [Qt]
  font="Sans,11,-1,5,50,0,0,0,0,0"
  doubleClickInterval=400
-diff -Naur lxqt-common-0.9.1/config/pcmanfm-qt/lxqt/settings.conf.in lxqt-common-0.9.1.tpg/config/pcmanfm-qt/lxqt/settings.conf.in
---- lxqt-common-0.9.1/config/pcmanfm-qt/lxqt/settings.conf.in	2015-02-14 13:42:58.000000000 +0000
-+++ lxqt-common-0.9.1.tpg/config/pcmanfm-qt/lxqt/settings.conf.in	2015-03-03 18:02:19.059024381 +0000
+--- lxqt-common-0.10.0/config/pcmanfm-qt/lxqt/settings.conf.in.0000~	2015-10-08 18:38:12.000000000 +0200
++++ lxqt-common-0.10.0/config/pcmanfm-qt/lxqt/settings.conf.in	2015-11-11 17:58:24.840362749 +0100
 @@ -1,11 +1,11 @@
  [System]
  IconThemeName=elementary
@@ -34,19 +32,18 @@ diff -Naur lxqt-common-0.9.1/config/pcmanfm-qt/lxqt/settings.conf.in lxqt-common
  
  [Behavior]
  BookmarkOpenMethod=0
-@@ -15,7 +15,7 @@
+@@ -15,7 +15,7 @@ ConfirmDelete=true
  
  [Desktop]
  WallpaperMode=stretch
--Wallpaper=@LXQT_SHARE_DIR@/themes/light/simple_blue_widescreen.png
-+Wallpaper=/usr/share/wallpapers/mdk/default.png
+-Wallpaper=@LXQT_SHARE_DIR@/themes/frost/numix.png
++Wallpaper=/usr/share/wallpapers/mdk/default.jpg
  BgColor=#000000
  FgColor=#ffffff
  ShadowColor=#000000
-diff -Naur lxqt-common-0.9.1/config/session.conf lxqt-common-0.9.1.tpg/config/session.conf
---- lxqt-common-0.9.1/config/session.conf	2015-02-14 13:42:58.000000000 +0000
-+++ lxqt-common-0.9.1.tpg/config/session.conf	2015-03-03 17:58:40.350100595 +0000
-@@ -3,10 +3,12 @@
+--- lxqt-common-0.10.0/config/session.conf.0000~	2015-10-08 18:38:12.000000000 +0200
++++ lxqt-common-0.10.0/config/session.conf	2015-11-11 17:57:50.684549847 +0100
+@@ -4,10 +4,12 @@ leave_confirmation=true
  
  [Environment]
  GTK_CSD=0

@@ -1,8 +1,8 @@
-diff -Naur lxqt-common-0.9.1/startlxqt.in lxqt-common-0.9.1.tpg/startlxqt.in
---- lxqt-common-0.9.1/startlxqt.in	2015-02-14 13:42:58.000000000 +0000
-+++ lxqt-common-0.9.1.tpg/startlxqt.in	2015-02-27 00:56:11.433569955 +0000
-@@ -1,5 +1,10 @@
- #!/bin/sh
+--- lxqt-common-0.10.0/startlxqt.in.0002~	2015-10-08 18:38:12.000000000 +0200
++++ lxqt-common-0.10.0/startlxqt.in	2015-11-11 17:59:24.117036476 +0100
+@@ -6,6 +6,11 @@ contains()
+     [ "$str" = "$substr" -o -z "${str##$substr:*}" -o -z "${str##*:$substr:*}" -o -z "${str%%*:$substr}" ]
+ }
  
 +# (tpg) create localized user dirs
 +if which xdg-user-dirs-update >/dev/null 2>&1; then
@@ -12,7 +12,7 @@ diff -Naur lxqt-common-0.9.1/startlxqt.in lxqt-common-0.9.1.tpg/startlxqt.in
  if [ -z "$XDG_DATA_HOME" ]; then
      export XDG_DATA_HOME="$HOME/.local/share"
  fi
-@@ -42,5 +47,68 @@
+@@ -64,5 +69,68 @@ export XDG_MENU_PREFIX="lxqt-"
  
  export XDG_CURRENT_DESKTOP="LXQt"
  
