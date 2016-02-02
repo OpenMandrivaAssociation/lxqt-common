@@ -1,26 +1,34 @@
---- lxqt-common-0.10.0/config/lxqt.conf.0000~	2015-10-08 18:38:12.000000000 +0200
-+++ lxqt-common-0.10.0/config/lxqt.conf	2015-11-11 17:57:50.684549847 +0100
-@@ -1,9 +1,12 @@
+diff -Naur lxqt-common-0.10.0/config/lxqt.conf lxqt-common-0.10.0.tpg/config/lxqt.conf
+--- lxqt-common-0.10.0/config/lxqt.conf	2015-10-08 16:38:12.000000000 +0000
++++ lxqt-common-0.10.0.tpg/config/lxqt.conf	2016-02-02 13:13:51.663019088 +0000
+@@ -1,11 +1,14 @@
  [General]
 -theme=frost
-+theme=Light
- icon_theme=oxygen
+-icon_theme=oxygen
++theme=kde-plasma
++icon_theme=breeze
  single_click_activate=false
  tool_button_style=ToolButtonTextBesideIcon
  
 +[Mouse]
-+cursor_theme=wonderland
++cursor_theme=breeze_cursors
 +
  [Qt]
  font="Sans,11,-1,5,50,0,0,0,0,0"
  doubleClickInterval=400
---- lxqt-common-0.10.0/config/pcmanfm-qt/lxqt/settings.conf.in.0000~	2015-10-08 18:38:12.000000000 +0200
-+++ lxqt-common-0.10.0/config/pcmanfm-qt/lxqt/settings.conf.in	2015-11-11 17:58:24.840362749 +0100
-@@ -1,11 +1,11 @@
+-style=Fusion
++style=Breeze
+ wheelScrollLines=3
+diff -Naur lxqt-common-0.10.0/config/pcmanfm-qt/lxqt/settings.conf.in lxqt-common-0.10.0.tpg/config/pcmanfm-qt/lxqt/settings.conf.in
+--- lxqt-common-0.10.0/config/pcmanfm-qt/lxqt/settings.conf.in	2015-10-08 16:38:12.000000000 +0000
++++ lxqt-common-0.10.0.tpg/config/pcmanfm-qt/lxqt/settings.conf.in	2016-02-02 13:06:34.241340442 +0000
+@@ -1,21 +1,25 @@
  [System]
  IconThemeName=elementary
 -SuCommand=gksu %s
 +SuCommand=pkexec %s
++TemplateRunApp=false
++Terminal=qterminal
  TerminalCommand=
 -Archiver=file-roller
 +Archiver=ark
@@ -32,28 +40,50 @@
  
  [Behavior]
  BookmarkOpenMethod=0
-@@ -15,7 +15,7 @@ ConfirmDelete=true
+ UseTrash=true
+ SingleClick=false
+ ConfirmDelete=true
++ConfirmTrash=true
++NoUsbTrash=true
  
  [Desktop]
  WallpaperMode=stretch
 -Wallpaper=@LXQT_SHARE_DIR@/themes/frost/numix.png
-+Wallpaper=/usr/share/wallpapers/mdk/default.jpg
++Wallpaper=/usr/share/mdk/backgrounds/default.png
  BgColor=#000000
  FgColor=#ffffff
  ShadowColor=#000000
---- lxqt-common-0.10.0/config/session.conf.0000~	2015-10-08 18:38:12.000000000 +0200
-+++ lxqt-common-0.10.0/config/session.conf	2015-11-11 17:57:50.684549847 +0100
-@@ -4,10 +4,12 @@ leave_confirmation=true
+@@ -28,6 +32,7 @@
+ MountOnStartup=true
+ MountRemovable=true
+ AutoRun=true
++CloseOnUnmount=true
+ 
+ [FolderView]
+ Mode=icon
+diff -Naur lxqt-common-0.10.0/config/session.conf lxqt-common-0.10.0.tpg/config/session.conf
+--- lxqt-common-0.10.0/config/session.conf	2015-10-08 16:38:12.000000000 +0000
++++ lxqt-common-0.10.0.tpg/config/session.conf	2016-02-02 13:08:54.927096679 +0000
+@@ -3,11 +3,13 @@
+ leave_confirmation=true
  
  [Environment]
- GTK_CSD=0
 +BROWSER=qupzilla
+ GTK_CSD=0
 +TERM=qterminal
  
  [Mouse]
  cursor_size=18
 -cursor_theme=whiteglass
-+cursor_theme=wonderland
++cursor_theme=breeze_cursors
  acc_factor=20
  acc_threshold=10
  left_handed=false
+@@ -16,6 +18,7 @@
+ delay=500
+ interval=30
+ beep=false
++numlock=true
+ 
+ [Font]
+ antialias=true

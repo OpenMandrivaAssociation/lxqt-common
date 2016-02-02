@@ -6,17 +6,16 @@ Version: 0.10.0
 Release: 1.%git.1
 Source0: %{name}-%{git}.tar.xz
 %else
-Release: 2
+Release: 3
 Source0: https://github.com/lxde/%{name}/archive/%{name}-%{version}.tar.xz
 %endif
 Summary: Common files for the LXQt desktop
 URL: http://lxqt.org/
 License: GPL
-Group: Graphical desktop/KDE
+Group: Graphical desktop/Other
 Patch0: lxqt-common-0.8.0-omv-settings.patch
 Patch1: lxqt-common-0.9.1-fix-path-lxqt-policykit-agent.patch
 Patch2: lxqt-common-0.8.0-startlxqt-omv-user-settings.patch
-Patch3: lxqt-common-0.10.0-kdm-sessions-path.patch
 BuildRequires: cmake
 BuildRequires: qmake5
 BuildRequires: cmake(lxqt)
@@ -31,6 +30,8 @@ Requires: openbox
 Requires: desktop-common-data
 Requires: distro-theme-OpenMandriva
 Requires: lxmenu-data
+Requires: breeze
+Requires: breeze-icons
 
 %description
 Common files for the LXQt desktop.
@@ -50,19 +51,6 @@ Common files for the LXQt desktop.
 
 %install
 %makeinstall_std -C build
-
-mkdir -p %{buildroot}%{_datadir}/apps/kdm/sessions
-cat >%{buildroot}%{_datadir}/apps/kdm/sessions/02lxqt.desktop <<'EOF'
-[Desktop Entry]
-Encoding=UTF-8
-Name=LXQt
-Comment=LXQt
-TryExec=/usr/bin/startlxqt
-Exec=LXQt
-Icon=
-Type=Application
-DesktopNames=LXQt
-EOF
 
 desktop-file-validate %{buildroot}/%{_datadir}/xsessions/lxqt.desktop
 
@@ -88,7 +76,6 @@ done
 %{_datadir}/lxqt/openbox/menu.xml
 %{_datadir}/lxqt/openbox/rc.xml.in
 %{_datadir}/xsessions/lxqt.desktop
-%{_datadir}/apps/kdm/sessions/02lxqt.desktop
 %{_datadir}/apps/kdm/sessions/lxqt.desktop
 %{_datadir}/desktop-directories/lxqt-*.directory
 %{_iconsdir}/hicolor/scalable/places/start-here-lxqt.svg
