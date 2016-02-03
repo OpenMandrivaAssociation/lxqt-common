@@ -80,6 +80,5 @@ rm -rf %{buildroot}%{_datadir}/kdm/sessions/lxqt.desktop
 %{_datadir}/lxqt/openbox/menu.xml
 %{_datadir}/lxqt/openbox/rc.xml.in
 %{_datadir}/xsessions/lxqt.desktop
-%{_datadir}/apps/kdm/sessions/lxqt.desktop
 %{_datadir}/desktop-directories/lxqt-*.directory
 %{_iconsdir}/hicolor/scalable/places/start-here-lxqt.svg
