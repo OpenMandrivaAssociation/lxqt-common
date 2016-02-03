@@ -30,6 +30,7 @@ Requires: openbox
 Requires: desktop-common-data
 Requires: distro-theme-OpenMandriva
 Requires: lxmenu-data
+Requires: menu-cache
 Requires: breeze
 Requires: breeze-icons
 
@@ -61,6 +62,9 @@ for i in `ls -1 %{buildroot}/usr/share/lxqt/themes`; do
     sed -i 's|file=.*$|file=default.png|' %{buildroot}%{_datadir}/lxqt/themes/$i/wallpaper.cfg
     ln -sf %{_datadir}/mdk/backgrounds/default.png %{buildroot}%{_datadir}/lxqt/themes/$i/default.png
 done
+
+# (tpg) we do not have any KDM in 2015.0 or newer
+rm -rf %{buildroot}%{_datadir}/kdm/sessions/lxqt.desktop
 
 %files
 %dir %{_datadir}/lxqt/openbox
