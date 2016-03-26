@@ -6,7 +6,7 @@ Version: 0.10.0
 Release: 1.%git.1
 Source0: %{name}-%{git}.tar.xz
 %else
-Release: 7
+Release: 8
 Source0: https://github.com/lxde/%{name}/archive/%{name}-%{version}.tar.xz
 %endif
 Summary: Common files for the LXQt desktop
@@ -18,6 +18,7 @@ Patch1: lxqt-common-0.9.1-fix-path-lxqt-policykit-agent.patch
 Patch2: lxqt-common-0.8.0-startlxqt-omv-user-settings.patch
 BuildRequires: cmake
 BuildRequires: qmake5
+BuildRequires: ninja
 BuildRequires: cmake(lxqt)
 BuildRequires: cmake(Qt5LinguistTools)
 BuildRequires: desktop-file-utils
@@ -45,13 +46,23 @@ Common files for the LXQt desktop.
 %endif
 %apply_patches
 
-%cmake_qt5
+%cmake_qt5 -G Ninja
 
 %build
-%make -C build
+# Need to be in a UTF-8 locale so grep (used by the desktop file
+# translation generator) doesn't scream about translations containing
+# "binary" (non-ascii) characters
+export LANG=en_US.utf-8
+export LC_ALL=en_US.utf-8
+%ninja -C build
 
 %install
-%makeinstall_std -C build
+# Need to be in a UTF-8 locale so grep (used by the desktop file
+# translation generator) doesn't scream about translations containing
+# "binary" (non-ascii) characters
+export LANG=en_US.utf-8
+export LC_ALL=en_US.utf-8
+%ninja_install -C build
 
 desktop-file-validate %{buildroot}/%{_datadir}/xsessions/lxqt.desktop
 
