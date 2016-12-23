@@ -79,18 +79,16 @@ done
 rm -rf %{buildroot}%{_datadir}/kdm/sessions/lxqt.desktop
 
 %files
-%dir %{_datadir}/lxqt/openbox
-%dir %{_sysconfdir}/xdg/lxqt
-%dir %{_sysconfdir}/xdg/pcmanfm-qt/lxqt
+%dir %{_sysconfdir}/xdg/qt5/lxqt
+%dir %{_sysconfdir}/xdg/qt5/pcmanfm-qt/lxqt
 %{_sysconfdir}/xdg/qt5/lxqt/*.conf
+%{_sysconfdir}/xdg/qt5/openbox/lxqt-rc.xml
 %{_sysconfdir}/xdg/qt5/pcmanfm-qt/lxqt/*.conf
 %{_sysconfdir}/xdg/qt5/autostart/lxqt*
 %{_sysconfdir}/xdg/qt5/menus/lxqt-applications.menu
 %{_bindir}/startlxqt
 %{_datadir}/lxqt/themes
 %{_datadir}/lxqt/graphics
-%{_datadir}/lxqt/openbox/menu.xml
-%{_datadir}/lxqt/openbox/rc.xml.in
 %{_datadir}/xsessions/lxqt.desktop
 %{_datadir}/desktop-directories/lxqt-*.directory
 %{_iconsdir}/hicolor/scalable/*/*.svg
