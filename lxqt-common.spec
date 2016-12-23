@@ -16,14 +16,14 @@ Group: Graphical desktop/Other
 Patch0: lxqt-common-0.8.0-omv-settings.patch
 Patch1: lxqt-common-0.9.1-fix-path-lxqt-policykit-agent.patch
 Patch2: lxqt-common-0.8.0-startlxqt-omv-user-settings.patch
-#BuildRequires: cmake
-#BuildRequires: qmake5
-#BuildRequires: ninja
-#BuildRequires: cmake(lxqt)
-#BuildRequires: cmake(Qt5LinguistTools)
-#BuildRequires: cmake(lxqt-build-tools)
-#BuildRequires: desktop-file-utils
-#BuildRequires: desktop-common-data
+BuildRequires: cmake
+BuildRequires: qmake5
+BuildRequires: ninja
+BuildRequires: cmake(lxqt)
+BuildRequires: cmake(Qt5LinguistTools)
+BuildRequires: cmake(lxqt-build-tools)
+BuildRequires: desktop-file-utils
+BuildRequires: desktop-common-data
 BuildArch: noarch
 Requires: xdg-user-dirs
 # workaround for missing icons in desktop files on lxqt desktop
