@@ -82,10 +82,10 @@ rm -rf %{buildroot}%{_datadir}/kdm/sessions/lxqt.desktop
 %dir %{_datadir}/lxqt/openbox
 %dir %{_sysconfdir}/xdg/lxqt
 %dir %{_sysconfdir}/xdg/pcmanfm-qt/lxqt
-%{_sysconfdir}/xdg/lxqt/*.conf
-%{_sysconfdir}/xdg/pcmanfm-qt/lxqt/*.conf
-%{_sysconfdir}/xdg/autostart/lxqt*
-%{_sysconfdir}/xdg/menus/lxqt-applications.menu
+%{_sysconfdir}/xdg/qt5/lxqt/*.conf
+%{_sysconfdir}/xdg/qt5/pcmanfm-qt/lxqt/*.conf
+%{_sysconfdir}/xdg/qt5/autostart/lxqt*
+%{_sysconfdir}/xdg/qt5/menus/lxqt-applications.menu
 %{_bindir}/startlxqt
 %{_datadir}/lxqt/themes
 %{_datadir}/lxqt/graphics
@@ -93,4 +93,5 @@ rm -rf %{buildroot}%{_datadir}/kdm/sessions/lxqt.desktop
 %{_datadir}/lxqt/openbox/rc.xml.in
 %{_datadir}/xsessions/lxqt.desktop
 %{_datadir}/desktop-directories/lxqt-*.directory
-%{_iconsdir}/hicolor/scalable/places/start-here-lxqt.svg
+%{_iconsdir}/hicolor/scalable/*/*.svg
+%{_mandir}/man1/startlxqt.1.*
