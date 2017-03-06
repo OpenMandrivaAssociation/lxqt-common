@@ -6,7 +6,7 @@ Version: 0.11.1
 Release: 1.%git.1
 Source0: %{name}-%{git}.tar.xz
 %else
-Release: 1
+Release: 2
 Source0: https://github.com/lxde/%{name}/archive/%{name}-%{version}.tar.xz
 %endif
 Summary: Common files for the LXQt desktop
@@ -16,6 +16,9 @@ Group: Graphical desktop/Other
 Patch0: lxqt-common-0.8.0-omv-settings.patch
 Patch1: lxqt-common-0.9.1-fix-path-lxqt-policykit-agent.patch
 Patch2: lxqt-common-0.8.0-startlxqt-omv-user-settings.patch
+# dont set XDG_DATA_HOME as part of XDG_DATA_DIRS
+# as this causes problems with some kde apps and is unnecessary
+Patch3: lxqt-common-0.11.0-xdg_dirs.patch
 BuildRequires: cmake
 BuildRequires: qmake5
 BuildRequires: ninja
