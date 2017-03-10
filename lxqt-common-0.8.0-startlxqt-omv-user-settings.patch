@@ -1,6 +1,6 @@
---- lxqt-common-0.10.0/startlxqt.in.0002~	2015-10-08 18:38:12.000000000 +0200
-+++ lxqt-common-0.10.0/startlxqt.in	2015-11-11 17:59:24.117036476 +0100
-@@ -6,6 +6,11 @@ contains()
+--- lxqt-common-0.11.1.orig/startlxqt.in	2016-12-11 00:10:32.000000000 +0000
++++ lxqt-common-0.11.1/startlxqt.in	2017-03-10 15:55:44.975742757 +0000
+@@ -6,6 +6,14 @@
      [ "$str" = "$substr" -o -z "${str##$substr:*}" -o -z "${str##*:$substr:*}" -o -z "${str%%*:$substr}" ]
  }
  
@@ -9,10 +9,29 @@
 +    xdg-user-dirs-update
 +fi
 +
++# (cb) remove the ksycoca cache which could possibly have been invalid
++rm -f $HOME/.cache/ksycoca*
++
  if [ -z "$XDG_DATA_HOME" ]; then
      export XDG_DATA_HOME="$HOME/.local/share"
  fi
-@@ -64,5 +69,68 @@ export XDG_MENU_PREFIX="lxqt-"
+@@ -23,6 +31,7 @@
+ fi
+ export XDG_DATA_DIRS
+ 
++XDG_CONFIG_DIRS=/etc/xdg
+ if [ -z "$XDG_CONFIG_DIRS" ]; then
+     export XDG_CONFIG_DIRS="@LXQT_ETC_XDG_DIR@"
+ else
+@@ -30,6 +39,7 @@
+         XDG_CONFIG_DIRS="$XDG_CONFIG_DIRS:@LXQT_ETC_XDG_DIR@"
+     fi
+ fi
++export XDG_CONFIG_DIRS
+ 
+ if [ -z "$XDG_CACHE_HOME" ]; then
+     export XDG_CACHE_HOME="$HOME/.cache"
+@@ -93,5 +103,68 @@
  
  export XDG_CURRENT_DESKTOP="LXQt"
  
