@@ -6,7 +6,7 @@ Version: 0.11.1
 Release: 1.%git.1
 Source0: %{name}-%{git}.tar.xz
 %else
-Release: 2
+Release: 3
 Source0: https://github.com/lxde/%{name}/archive/%{name}-%{version}.tar.xz
 %endif
 Summary: Common files for the LXQt desktop
