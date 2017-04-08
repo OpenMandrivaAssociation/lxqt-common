@@ -1,13 +1,13 @@
 %define git 0
 
 Name: lxqt-common
-Version: 0.11.1
+Version: 0.11.2
 %if %git
-Release: 1.%git.1
+Release: 0.%git.1
 Source0: %{name}-%{git}.tar.xz
 %else
-Release: 3
-Source0: https://github.com/lxde/%{name}/archive/%{name}-%{version}.tar.xz
+Release: 1
+Source0: https://github.com/lxde/lxqt-common/releases/download/%{version}/lxqt-common-%{version}.tar.xz
 %endif
 Summary: Common files for the LXQt desktop
 URL: http://lxqt.org/
